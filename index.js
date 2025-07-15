@@ -1,4 +1,5 @@
 const express = require('express');
+const  cors = require('cors')
 require('dotenv').config();
 const connectMongoDB = require('./config/connectMongoDb');
 const authRouter = require('./routes/auth.routes');
@@ -14,6 +15,7 @@ connectMongoDB();
 
 
 //middleware
+app.use(cors())
 app.use(express.json());
 
 
